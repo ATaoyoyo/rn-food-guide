@@ -3,8 +3,12 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
+import { enableScreens } from 'react-native-screens';
+
+import MealsNavigation from './navigation/MealsNavigation';
 
 SplashScreen.preventAutoHideAsync();
+enableScreens();
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -34,23 +38,5 @@ export default function App() {
 
   if (!appIsReady) return null;
 
-  return (
-    <View style={styles.container} onLayout={onLayoutRootView}>
-      <Text style={styles.text}>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  return <MealsNavigation onLayout={onLayoutRootView} />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
-  text: {
-    fontFamily: 'open-sans-bold',
-  },
-});
