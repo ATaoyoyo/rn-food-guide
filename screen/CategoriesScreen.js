@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import CategoryGridTile from '../components/CategoryGridTile';
 import { CATEGORIES } from '../data/dummy-data';
@@ -13,9 +13,11 @@ const CategoriesScreen = ({ navigation }) => {
     );
   };
 
-  navigation.setOptions({
-    title: 'Category Meals',
-  });
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: 'Category Meals',
+    });
+  }, [navigation]);
 
   return (
     <View style={styles.screen}>
