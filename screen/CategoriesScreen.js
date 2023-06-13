@@ -13,11 +13,11 @@ const CategoriesScreen = ({ navigation }) => {
     );
   };
 
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      title: 'Category Meals',
-    });
-  }, [navigation]);
+  // useLayoutEffect(() => {
+  //   navigation.setOptions({
+  //     title: 'Category Meals',
+  //   });
+  // }, [navigation]);
 
   return (
     <View style={styles.screen}>
